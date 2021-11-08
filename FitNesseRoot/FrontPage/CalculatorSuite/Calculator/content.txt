@@ -1,0 +1,25 @@
+!define TEST_SYSTEM {slim}
+#!path C:\backup\s&n\automation\main\fitnesse\workspace\Fitnesse\bin\
+!path C:\bin\
+!path C:\backup\s&n\automation\main\fitnesse\workspace\Fitnesse\lib\fitnesse-standalone.jar
+!path C:\backup\s&n\automation\main\fitnesse\workspace\Fitnesse\lib\log4j-1.2.17.jar
+
+#!***> Classpath
+
+!path ${java.class.path}
+!define TEST_SYSTEM {slim}
+!define COLLAPSE_SETUP {true}
+!define COLLAPSE_TEARDOWN {true}
+
+#*!
+
+|Import                      |
+|com.ankur.calculator.fixture|
+|org.apache.log4j.Logger     |
+
+|Calculator Fixture                            |
+|first|second|add?|substract?|divide?|multiply?|
+|4    |5     |9.0 |-1.0      |0.8    |20.0     |
+|-1   |10    |9.0 |-11.0     |-0.1   |-10.0    |
+|22   |7     |29.0|15.0      |~=3.14 |154.0    |
+|22   |8     |29.0|15.0      |~=3.14 |154.0    |
