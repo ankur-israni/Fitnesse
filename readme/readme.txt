@@ -1,4 +1,4 @@
-java -jar ./lib/fitnesse-standalone.jar -p 5080
+C:\backup\sn\automation\test\fitnesse\workspace\Fitnesse> java -jar ./lib/fitnesse-standalone.jar -p 5080
 
 Calculator Wiki
 --------------------------
