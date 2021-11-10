@@ -1,17 +1,13 @@
+!*****> Setup
 !define TEST_SYSTEM {slim}
-
 !path C:\backup\sn\automation\test\fitnesse\workspace\Fitnesse\bin\
 !path C:\backup\sn\automation\test\fitnesse\workspace\Fitnesse\lib\fitnesse-standalone.jar
 !path C:\backup\sn\automation\test\fitnesse\workspace\Fitnesse\lib\log4j-1.2.17.jar
-
-#!***> Classpath
-
 !path ${java.class.path}
 !define TEST_SYSTEM {slim}
 !define COLLAPSE_SETUP {true}
 !define COLLAPSE_TEARDOWN {true}
-
-#*!
+**********!
 
 |Import                      |
 |com.ankur.calculator.fixture|

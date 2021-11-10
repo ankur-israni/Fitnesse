@@ -1,7 +1,7 @@
 .idea
 .settings
 bin\
-[A[C[C[C[
+*.class
 .classpath
 .project
 *.iml
