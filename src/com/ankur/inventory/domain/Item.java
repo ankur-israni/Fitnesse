@@ -19,6 +19,18 @@ public class Item {
 
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(Float price) {
+        this.price = price;
+    }
+
     public Item(Integer id, String name, Float price, Info info) {
         this.id = id;
         this.name = name;

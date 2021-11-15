@@ -1,21 +1,20 @@
-!*****> Setup
+!***> Setup
+
 !define TEST_SYSTEM {slim}
 !path C:\backup\sn\automation\test\fitnesse\workspace\Fitnesse\bin\
 !path C:\backup\sn\automation\test\fitnesse\workspace\Fitnesse\lib\fitnesse-standalone.jar
 !path C:\backup\sn\automation\test\fitnesse\workspace\Fitnesse\lib\log4j-1.2.17.jar
+!path C:\backup\sn\automation\test\fitnesse\workspace\Fitnesse\lib\spring*.jar
+
 !path ${java.class.path}
 !define TEST_SYSTEM {slim}
 !define COLLAPSE_SETUP {true}
 !define COLLAPSE_TEARDOWN {true}
-**********!
+*!
+|Import                     |
+|com.ankur.inventory.fixture|
+|org.apache.log4j.Logger    |
 
-|Import                      |
-|com.ankur.calculator.fixture|
-|org.apache.log4j.Logger     |
-
-|Calculator Fixture                            |
-|first|second|add?|substract?|divide?|multiply?|
-|4    |5     |9.0 |-1.0      |0.8    |20.0     |
-|-1   |10    |9.0 |-11.0     |-0.1   |-10.0    |
-|22   |7     |29.0|15.0      |~=3.14 |154.0    |
-
+|Inventory Service Fixture                   |
+|name|id?|price?|manufacturedBy?|description?|
+|lamp|1  |99.0  |apple          |apple       |

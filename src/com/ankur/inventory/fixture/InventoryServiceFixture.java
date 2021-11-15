@@ -19,6 +19,36 @@ import java.util.List;
 
 public class InventoryServiceFixture {
 
+
+    private String name;
+
+
+    public Integer id(){
+        return 1;
+    }
+
+    public Float price(){
+        return 99f;
+    }
+
+    public String manufacturedBy(){
+        return "apple";
+    }
+
+    public String description(){
+        return "apple";
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+
     private static final String FIND_BY_NAME_URL="http://localhost:7000/inventory/services/findByName";
 
     public static void main(String args[]) throws Exception{
@@ -59,5 +89,7 @@ public class InventoryServiceFixture {
         restTemplate.setMessageConverters(messageConverters);
         return restTemplate;
     }
+
+
 
 }
