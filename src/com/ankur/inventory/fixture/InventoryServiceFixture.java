@@ -13,14 +13,37 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.client.RestTemplate;
 
 import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class InventoryServiceFixture {
 
-
+    private RestTemplate restTemplate;
+    private HttpHeaders headers;
+    private InventoryFindByNameRequest findByNameRequest;
+    private HttpEntity<InventoryFindByNameRequest> request;
+    private ResponseEntity<InventoryFindByNameResponse> response;
+    private InventoryFindByNameResponse inventoryFindByNameResponse;
+    private URI url;
     private String name;
+
+
+    public InventoryServiceFixture(){
+        restTemplate = restTemplate();
+        headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        headers.add("Content-Type", "application/json");
+        headers.add("client-id", "eship");
+
+        try {
+             url = new URI(FIND_BY_NAME_URL);
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     public Integer id(){
@@ -32,7 +55,17 @@ public class InventoryServiceFixture {
     }
 
     public String manufacturedBy(){
-        return "apple";
+        findByNameRequest = new InventoryFindByNameRequest(this.getName());
+        request = new HttpEntity<>(findByNameRequest,headers);
+        ResponseEntity<InventoryFindByNameResponse> response = restTemplate.postForEntity(url, request, InventoryFindByNameResponse.class);
+        inventoryFindByNameResponse = response.getBody();
+
+        StringBuilder builder = new StringBuilder();
+        for(Item item: inventoryFindByNameResponse.getItems()){
+            builder.append(item.getInfo().getManufacturedBy());
+            builder.append(",");
+        }
+        return builder.toString();
     }
 
     public String description(){
