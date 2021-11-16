@@ -45,9 +45,19 @@ public class InventoryServiceFixture {
         }
     }
 
+    private void init(){
+        findByNameRequest = new InventoryFindByNameRequest(this.getName());
+        request = new HttpEntity<>(findByNameRequest,headers);
+        ResponseEntity<InventoryFindByNameResponse> response = restTemplate.postForEntity(url, request, InventoryFindByNameResponse.class);
+        inventoryFindByNameResponse = response.getBody();
+    }
 
-    public Integer id(){
-        return 1;
+
+    public String id(){
+       // return 1;
+
+        init();
+        return resolveId().toString();
     }
 
     public Float price(){
@@ -55,17 +65,26 @@ public class InventoryServiceFixture {
     }
 
     public String manufacturedBy(){
-        findByNameRequest = new InventoryFindByNameRequest(this.getName());
-        request = new HttpEntity<>(findByNameRequest,headers);
-        ResponseEntity<InventoryFindByNameResponse> response = restTemplate.postForEntity(url, request, InventoryFindByNameResponse.class);
-        inventoryFindByNameResponse = response.getBody();
+        init();
+        return resolveManufacturedBy().toString();
+    }
 
+    private StringBuilder resolveId() {
+        StringBuilder builder = new StringBuilder();
+        for(Item item: inventoryFindByNameResponse.getItems()){
+            builder.append(item.getId());
+            builder.append(",");
+        }
+        return builder;
+    }
+
+    private StringBuilder resolveManufacturedBy() {
         StringBuilder builder = new StringBuilder();
         for(Item item: inventoryFindByNameResponse.getItems()){
             builder.append(item.getInfo().getManufacturedBy());
             builder.append(",");
         }
-        return builder.toString();
+        return builder;
     }
 
     public String description(){
