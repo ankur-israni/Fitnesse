@@ -54,41 +54,59 @@ public class InventoryServiceFixture {
 
 
     public String id(){
-       // return 1;
-
         init();
-        return resolveId().toString();
+        return resolveId();
     }
 
-    public Float price(){
-        return 99f;
+    public String price(){
+        init();
+        return resolvePrice();
     }
 
     public String manufacturedBy(){
         init();
-        return resolveManufacturedBy().toString();
+        return resolveManufacturedBy();
     }
 
-    private StringBuilder resolveId() {
+    private String resolvePrice() {
+        StringBuilder builder = new StringBuilder();
+        for(Item item: inventoryFindByNameResponse.getItems()){
+            builder.append(item.getPrice());
+            builder.append(",");
+        }
+        return builder.toString();
+    }
+
+    private String resolveId() {
         StringBuilder builder = new StringBuilder();
         for(Item item: inventoryFindByNameResponse.getItems()){
             builder.append(item.getId());
             builder.append(",");
         }
-        return builder;
+        return builder.toString();
     }
 
-    private StringBuilder resolveManufacturedBy() {
+    private String resolveManufacturedBy() {
         StringBuilder builder = new StringBuilder();
         for(Item item: inventoryFindByNameResponse.getItems()){
             builder.append(item.getInfo().getManufacturedBy());
             builder.append(",");
         }
-        return builder;
+        return builder.toString();
+    }
+
+    private String resolveDescription() {
+        StringBuilder builder = new StringBuilder();
+        for(Item item: inventoryFindByNameResponse.getItems()){
+            builder.append(item.getInfo().getDescription());
+            builder.append(",");
+        }
+        return builder.toString();
     }
 
     public String description(){
-        return "apple";
+        init();
+        return resolveDescription();
     }
 
     public String getName() {
