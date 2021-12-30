@@ -1,2 +1,2 @@
-!1 Rest Service
+!1 Inventory Service
 !contents -R2 -g -p -f -h

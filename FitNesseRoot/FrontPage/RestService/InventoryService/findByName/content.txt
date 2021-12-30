@@ -1,0 +1,29 @@
+!***> Setup
+
+!define TEST_SYSTEM {slim}
+
+#!path /backup/S_N/testing/test/fitnesse/workspace/Fitnesse/bin/
+#!path /backup/S_N/testing/test/fitnesse/workspace/Fitnesse/fitnesse-standalone.jar
+#!path /backup/S_N/testing/test/fitnesse/workspace/Fitnesse/lib/log4j-1.2.17.jar
+#!path /backup/S_N/testing/test/fitnesse/workspace/Fitnesse/lib/spring-web-5.3.14.jar
+
+!path /backup/S_N/testing/test/fitnesse/workspace/Fitnesse/bin/
+#!path /backup/S_N/testing/test/fitnesse/workspace/Fitnesse/fitnesse-standalone.jar
+#!path /backup/S_N/testing/test/fitnesse/workspace/Fitnesse/lib/log4j-1.2.17.jar
+!path /backup/S_N/testing/test/fitnesse/workspace/Fitnesse/lib/*.jar
+
+!path ${java.class.path}
+!define TEST_SYSTEM {slim}
+!define COLLAPSE_SETUP {true}
+!define COLLAPSE_TEARDOWN {true}
+*!
+|Import                     |
+|com.ankur.inventory.fixture|
+|org.apache.log4j.Logger    |
+
+|Inventory Find By Name Fixture                                                           |
+|name |id? |price?      |manufacturedBy?|description?                                     |
+|lamp |3,4,|65.99,67.99,|Costco,Genie,  |Teak lamp - brown color,Magic lamp with 3 wishes,|
+|phone|2,  |100.33,     |Samsung,       |Android phone,                                   |
+
+

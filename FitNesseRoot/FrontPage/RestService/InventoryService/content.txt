@@ -15,6 +15,6 @@
 |com.ankur.inventory.fixture|
 |org.apache.log4j.Logger    |
 
-|Inventory Service Fixture                                                               |
+|Inventory Find By Name Fixture                                                          |
 |name|id? |price?      |manufacturedBy?|description?                                     |
 |lamp|3,4,|65.99,67.99,|Costco,Genie,  |Teak lamp - brown color,Magic lamp with 3 wishes,|

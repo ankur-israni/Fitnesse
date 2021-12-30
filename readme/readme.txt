@@ -1,10 +1,10 @@
-C:\backup\sn\automation\test\fitnesse\workspace\Fitnesse> java -jar ./lib/fitnesse-standalone.jar -p 5080
+/backup/S_N/testing/test/fitnesse/workspace/Fitnesse> java -jar ./lib/fitnesse-standalone.jar -p 5080
 
 Calculator Wiki
 --------------------------
 !define TEST_SYSTEM {slim}
 #!path C:\backup\s&n\automation\main\fitnesse\workspace\Fitnesse\bin\
-!path C:\bin\
+#!path C:\bin\
 !path C:\backup\s&n\automation\main\fitnesse\workspace\Fitnesse\lib\fitnesse-standalone.jar
 !path C:\backup\s&n\automation\main\fitnesse\workspace\Fitnesse\lib\log4j-1.2.17.jar
 
