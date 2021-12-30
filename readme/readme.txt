@@ -3,10 +3,8 @@
 Calculator Wiki
 --------------------------
 !define TEST_SYSTEM {slim}
-#!path C:\backup\s&n\automation\main\fitnesse\workspace\Fitnesse\bin\
-#!path C:\bin\
-!path C:\backup\s&n\automation\main\fitnesse\workspace\Fitnesse\lib\fitnesse-standalone.jar
-!path C:\backup\s&n\automation\main\fitnesse\workspace\Fitnesse\lib\log4j-1.2.17.jar
+!path /backup/S_N/testing/test/fitnesse/workspace/Fitnesse/bin/
+!path /backup/S_N/testing/test/fitnesse/workspace/Fitnesse/lib/*.jar
 
 #!***> Classpath
 
